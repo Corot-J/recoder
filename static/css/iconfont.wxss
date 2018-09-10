@@ -1,0 +1,55 @@
+@font-face {
+  font-family: 'iconfont';  /* project id 790408 */
+  src: url('//at.alicdn.com/t/font_790408_734yfe9ya2e.eot');
+  src: url('//at.alicdn.com/t/font_790408_734yfe9ya2e.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_790408_734yfe9ya2e.woff') format('woff'),
+  url('//at.alicdn.com/t/font_790408_734yfe9ya2e.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_790408_734yfe9ya2e.svg#iconfont') format('svg');
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-users:before { content: "\e706"; }
+
+.icon-stage_personal:before { content: "\e707"; }
+
+.icon-stage_agent:before { content: "\e708"; }
+
+.icon-scholar:before { content: "\e709"; }
+
+.icon-more:before { content: "\e70a"; }
+
+.icon-stage:before { content: "\e70b"; }
+
+.icon-expenditure:before { content: "\e70c"; }
+
+.icon-income:before { content: "\e70d"; }
+
+.icon-card:before { content: "\e70e"; }
+
+.icon-voucher:before { content: "\e70f"; }
+
+.icon-electronic_card:before { content: "\e710"; }
+
+.icon-close:before { content: "\e711"; }
+
+.icon-goldList:before { content: "\e712"; }
+
+.icon-selected:before { content: "\e713"; }
+
+.icon-edit:before { content: "\e714"; }
+
+.icon-go_down:before { content: "\e715"; }
+
+.icon-go_up:before { content: "\e716"; }
+
+.icon-telephone:before { content: "\e717"; }
+
+.icon-seniorOnline:before { content: "\e718"; }
+
