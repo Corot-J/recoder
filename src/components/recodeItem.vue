@@ -8,7 +8,7 @@
       <div class="recode-level">等级：{{recode.level}}</div>
     </div>
     <div class="recode-footer">
-      <div class="recode-count">数量：{{recode.count}}</div>
+      <div class="recode-count">数量：{{recode.count}}{{recode.unit}}</div>
       <button @tap="add">添加</button>
     </div>
   </div>

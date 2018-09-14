@@ -13,7 +13,7 @@
   border-radius: 10rpx;
   position: absolute;
   left: calc(50% - 300rpx);
-  top: 300rpx;
+  top: 200rpx;
   overflow: hidden;
 }
 .modal-header{

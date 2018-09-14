@@ -17,7 +17,7 @@ export const mutations = {
   // 添加数量
   [types.ADD_COUNT] (state, options) {
     let count = parseInt(state.recodeList[options.index].count) + parseInt(options.count)
-    state.recodeList[options.index].count += count
+    state.recodeList[options.index].count = count
     state.recodeList[options.index].level = computeLevel(options.count)
   }
 }

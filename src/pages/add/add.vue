@@ -13,6 +13,12 @@
           <input type="number" v-model="recode.count" placeholder="输入数量">
         </div>
       </div>
+      <div class="edit-item">
+        <div class="edit-key">单位</div>
+        <div class="edit-value">
+          <input type="text" v-model="recode.unit" placeholder="输入数量">
+        </div>
+      </div>
     </div>
     <button class="save-btn" @tap="create">创建</button>
   </div>
@@ -29,7 +35,8 @@ export default {
         id: '',
         title: '',
         level: 0,
-        count: 0
+        count: 0,
+        unit: ''
       }
     }
   },
@@ -42,20 +49,47 @@ export default {
           icon: 'none'
         });
       }
-      else{
-        this.recode.level = computeLevel(this.recode.count)
-        this.recode.id = new Date().getTime()
-        Store.dispatch('createRecode', this.recode)
-        wx.navigateBack({
-          delta: 1
+      else if(this.recode.unit == ''){
+        wx.showToast({
+          title: '单位不能为空', //提示的内容,
+          icon: 'none', //图标
         });
-        this.recode = {
-          id: '',
-          title: '',
-          level: 0,
-          count: 0
-        }
+      }
+      else{
+        this.recode.level = computeLevel(this.recode.count)   //计算当前等级
+        this.recode.id = new Date().getTime()
+
+        //触发创建事件
+        Store.dispatch('createRecode', this.recode).then(() => {
+          let that = this
+          wx.showToast({
+            title: '创建成功', //提示的内容,
+            icon: 'success', //图标,
+            duration: 2000, //延迟时间,
+            mask: true, //显示透明蒙层，防止触摸穿透,
+            success: res => {
+              setTimeout(() => {             
+                wx.navigateBack({
+                  delta: 1
+                });
+                that.reset()
+              },1000)
+            }
+          });
+        })       
+        
       }      
+    },
+
+    // 重置
+    reset(){
+      this.recode = {
+        id: '',
+        title: '',
+        level: 0,
+        count: 0,
+        unit: ''
+      }
     }
   }
 }

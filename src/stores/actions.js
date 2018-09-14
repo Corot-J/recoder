@@ -3,8 +3,24 @@ import * as types from './mutaions-types'
 export default {
   // 创建记录项
   createRecode(context, recode) {
-    context.commit(types.CREATE_RECODE, recode)
-    context.dispatch('saveRecodeList')
+    return new Promise((resolve, reject) => {
+      var exist = false
+      context.state.recodeList.map(item => {
+        if(item.title == recode.title){
+          exist = true
+          wx.showToast({
+            title: `已存在 “${item.title}”`, //提示的内容,
+            icon: 'none', //图标
+          });
+          reject()
+        }
+      })
+      if(!exist){
+        context.commit(types.CREATE_RECODE, recode)
+        context.dispatch('saveRecodeList')
+        resolve()
+      }   
+    })     
   },
   // 删除记录项
   delRecode(context, recode){

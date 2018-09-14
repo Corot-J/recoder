@@ -47,6 +47,10 @@ export default {
         index: this.operateIndex,
         count: count
       })
+      wx.showToast({
+        title: '添加成功', //提示的内容,
+        icon: 'success' //图标
+      });
       this.hideAddModal();
     },
     showDelModal(recode) {
